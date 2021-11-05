@@ -23,7 +23,9 @@
         <input id="encrypted_link" type="text" class="form-control" placeholder="encrypted ID">
         <p class="mt-3">You can share the decryption website and encrypted ID separately or combine them together with <code>#</code> like this: <code>https://example.com/#ABCD.1234</code></p>
       </div>
-      <div class="card-body"><h3>Decryption servers</h3><pre>https://rilis.pages.dev</pre></div>
+      <div class="card-body"><h3>Decryption servers</h3><pre>https://rilisan.eu.org
+https://crypt.rilisan.cf
+https://rilis.pages.dev</pre></div>
     </div>
   </div></div></div>
 
@@ -102,7 +104,7 @@ async function generateKey() {
 }
 
 async function encryptId(folderId) {
-  return encrypt(folderId, "rV5ROi2Jq6sVkA8AhtLsvJ4v9BYI+NqJdpv+GMKghTI=");
+  return encrypt(folderId, "f9gD9W7QMzLxkpCB5e6/0Ierk84TRNuDga5+GUSKCE4=");
 }
 
 async function encryptFolder() {
@@ -121,7 +123,7 @@ document.querySelector("#encrypt").addEventListener("click", async function(even
   document.querySelector("#folder_link").setAttribute("disabled", "");
   document.querySelector("#encrypt").setAttribute("disabled", "");
   try {
-    document.querySelector("#encrypted_link").value = "cmlsaXMucGFnZXMuZGV2." + (await encryptFolder());
+    document.querySelector("#encrypted_link").value = "cmlsaXNhbi5ldS5vcmc7Y3J5cHQucmlsaXNhbi5jZjtyaWxpcy5wYWdlcy5kZXY=." + (await encryptFolder());
   }
   catch(e) {
     alert(e.message);
